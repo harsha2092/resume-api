@@ -30,3 +30,5 @@
 *.iws
 *.ipr
 .idea/
+
+.envrc
