@@ -14,4 +14,12 @@ class ResumeController < ApplicationController
     end
     render 'resume/contact_details.json.jbuilder'
   end
+
+  def projects
+    @projects = Project.all
+    if @projects.nil?
+      return render 'resume/nil_error.json.jbuilder'
+    end
+    render 'resume/projects.json.jbuilder'
+  end
 end
