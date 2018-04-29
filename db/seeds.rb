@@ -14,6 +14,7 @@ Role.delete_all
 CompanyProject.delete_all
 WorkExperience.delete_all
 Education.delete_all
+Language.delete_all
 
 BasicDetail.create([{name: 'Harsha Vardhan',
                      designation: 'Full Stack Developer',
@@ -40,7 +41,7 @@ Project.create([{name: 'IMAIL', description: 'An INTRANET Mailbox'},
                 {name: 'NOTEPAD EASY', description: 'Note taking App'}])
 
 Hobby.create([{name: 'Guitar', description: 'A rookie guitar player'},
-                {name: 'Cricket', description: 'An Avid cricket watcher and player'}])
+              {name: 'Cricket', description: 'An Avid cricket watcher and player'}])
 
 zoho = WorkExperience.create([{company_name: 'Zoho Corporation', timeline: 'Aug. 2013 - Dec-2017'}]);
 
@@ -49,37 +50,37 @@ mdm = CompanyProject.create([{name: 'Mobile Device Manager Plus',
                               work_experience_id: zoho.first.id}])
 
 Role.create([{
-    name: 'Tools Developer',
-    description: 'process and analyse customer data,
+                 name: 'Tools Developer',
+                 description: 'process and analyse customer data,
     automate release process',
-    company_project_id: mdm.first.id
-                      }])
+                 company_project_id: mdm.first.id
+             }])
 Role.create([{
-    name: 'QA Module Owner',
-    description: 'Actively managed members of QATeam,
+                 name: 'QA Module Owner',
+                 description: 'Actively managed members of QATeam,
     Coordinated with support to identify core usability issues of the customer',
-    company_project_id: mdm.first.id
-                      }])
+                 company_project_id: mdm.first.id
+             }])
 Role.create([{
-    name: 'New Hire Orientation',
-    description: 'Was responsible for Context sharing to the new members of the team',
-    company_project_id: mdm.first.id
-                      }])
+                 name: 'New Hire Orientation',
+                 description: 'Was responsible for Context sharing to the new members of the team',
+                 company_project_id: mdm.first.id
+             }])
 Role.create([{
-    name: 'Support Data Analysis',
-    description: 'Was responsible for analysis of support and live customer data',
-    company_project_id: mdm.first.id
-                      }])
+                 name: 'Support Data Analysis',
+                 description: 'Was responsible for analysis of support and live customer data',
+                 company_project_id: mdm.first.id
+             }])
 
 thoughtworks = WorkExperience.create([{company_name: 'Thoughtworks', timeline: 'Jan 2018 - Present'}]);
 
 recruitx = CompanyProject.create([{name: 'Recruitx',
-                              description: 'An app to help panelist sign up for recruitments',
-                              work_experience_id: thoughtworks.first.id}])
+                                   description: 'An app to help panelist sign up for recruitments',
+                                   work_experience_id: thoughtworks.first.id}])
 
 sherpa = CompanyProject.create([{name: 'Sherpa',
-                                   description: 'decision making tool for staffing people in projects',
-                                   work_experience_id: thoughtworks.first.id}])
+                                 description: 'decision making tool for staffing people in projects',
+                                 work_experience_id: thoughtworks.first.id}])
 Role.create([{
                  name: 'App Developer',
                  description: 'react native application in android and iOS',
@@ -93,10 +94,10 @@ Role.create([{
              }])
 
 Education.create([{course_name: 'B.E. IN ELECTRICAL AND ELECTRONICS ENGINEERING',
-                  timeline: 'Anna University 2009-2013',
-                  institution: 'SSN College of Engineering',
-                  location: 'Chennai, TN',
-                  score: 'CGPA: 7.4'},
+                   timeline: 'Anna University 2009-2013',
+                   institution: 'SSN College of Engineering',
+                   location: 'Chennai, TN',
+                   score: '7.4'},
 
                   {course_name: 'HIGHER SECONDARY COURSE',
                    timeline: 'TN State Board 2009',
@@ -111,3 +112,12 @@ Education.create([{course_name: 'B.E. IN ELECTRICAL AND ELECTRONICS ENGINEERING'
                    score: '90.2%'},
 
                  ])
+
+Language.create([{
+                     name: 'Tamil',
+                     fluency: 'native'
+                 },
+                 {
+                     name: 'English',
+                     fluency: 'fluent'
+                 }])

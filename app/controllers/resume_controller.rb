@@ -49,4 +49,13 @@ class ResumeController < ApplicationController
     end
   end
 
+  def languages
+    @languages = Language.all
+    if @languages.nil?
+      return render 'resume/nil_error.json.jbuilder'
+    else
+      render 'resume/languages.json.jbuilder'
+    end
+  end
+
 end
