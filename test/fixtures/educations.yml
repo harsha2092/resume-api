@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_name: MyString
+  timeline: MyString
+  institution: MyString
+  location: MyString
+
+two:
+  course_name: MyString
+  timeline: MyString
+  institution: MyString
+  location: MyString

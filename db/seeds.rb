@@ -13,6 +13,7 @@ Hobby.delete_all
 Role.delete_all
 CompanyProject.delete_all
 WorkExperience.delete_all
+Education.delete_all
 
 BasicDetail.create([{name: 'Harsha Vardhan',
                      designation: 'Full Stack Developer',
@@ -90,3 +91,23 @@ Role.create([{
                  description: 'React and Ruby on rails',
                  company_project_id: sherpa.first.id
              }])
+
+Education.create([{course_name: 'B.E. IN ELECTRICAL AND ELECTRONICS ENGINEERING',
+                  timeline: 'Anna University 2009-2013',
+                  institution: 'SSN College of Engineering',
+                  location: 'Chennai, TN',
+                  score: 'CGPA: 7.4'},
+
+                  {course_name: 'HIGHER SECONDARY COURSE',
+                   timeline: 'TN State Board 2009',
+                   institution: 'D.A.V Higher Secondary School',
+                   location: 'Chennai, TN',
+                   score: '95.16%'},
+
+                  {course_name: 'SECONDARY SCHOOL EXAMINATION',
+                   timeline: 'CBSE 2007',
+                   institution: 'S.R.D.K.Vivekananda Vidyalaya Junior College',
+                   location: 'Chennai, TN',
+                   score: '90.2%'},
+
+                 ])

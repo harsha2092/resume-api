@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'resume/projects', to: 'resume#projects'
   get 'resume/hobbies', to: 'resume#hobbies'
   get 'resume/work_experiences', to: 'resume#work_experiences'
+  get 'resume/education', to: 'resume#education'
 end

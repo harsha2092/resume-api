@@ -40,4 +40,13 @@ class ResumeController < ApplicationController
     end
   end
 
+  def education
+    @education = Education.all
+    if @education.nil?
+      return render 'resume/nil_error.json.jbuilder'
+    else
+      render 'resume/education.json.jbuilder'
+    end
+  end
+
 end
