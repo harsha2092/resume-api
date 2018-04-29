@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428170026) do
+ActiveRecord::Schema.define(version: 20180428195007) do
 
   create_table "basic_details", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20180428170026) do
     t.string "description"
   end
 
+  create_table "company_projects", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "work_experience_id"
+    t.index ["work_experience_id"], name: "index_company_projects_on_work_experience_id"
+  end
+
   create_table "contact_details", force: :cascade do |t|
     t.string "email"
     t.string "phone_number"
@@ -27,9 +36,32 @@ ActiveRecord::Schema.define(version: 20180428170026) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hobbies", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "company_project_id"
+    t.index ["company_project_id"], name: "index_roles_on_company_project_id"
+  end
+
+  create_table "work_experiences", force: :cascade do |t|
+    t.string "company_name"
+    t.text "timeline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

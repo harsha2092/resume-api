@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'resume/basic_details', to: 'resume#basic_details'
   get 'resume/contact_details', to: 'resume#contact_details'
   get 'resume/projects', to: 'resume#projects'
+  get 'resume/hobbies', to: 'resume#hobbies'
+  get 'resume/work_experiences', to: 'resume#work_experiences'
 end

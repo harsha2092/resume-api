@@ -22,4 +22,22 @@ class ResumeController < ApplicationController
     end
     render 'resume/projects.json.jbuilder'
   end
+
+  def hobbies
+    @hobbies = Hobby.all
+    if @hobbies.nil?
+      return render 'resume/nil_error.json.jbuilder'
+    end
+    render 'resume/hobbies.json.jbuilder'
+  end
+
+  def work_experiences
+    @work_experiences = WorkExperience.all
+    if @work_experiences.nil?
+      return render 'resume/nil_error.json.jbuilder'
+    else
+      render 'resume/work_experiences.json.jbuilder'
+    end
+  end
+
 end

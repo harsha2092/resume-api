@@ -9,6 +9,10 @@
 BasicDetail.delete_all
 ContactDetail.delete_all
 Project.delete_all
+Hobby.delete_all
+Role.delete_all
+CompanyProject.delete_all
+WorkExperience.delete_all
 
 BasicDetail.create([{name: 'Harsha Vardhan',
                      designation: 'Full Stack Developer',
@@ -33,3 +37,56 @@ ContactDetail.create([{email: 'mailtomeharsha@gmail.com', phone_number: '+ 91 - 
 Project.create([{name: 'IMAIL', description: 'An INTRANET Mailbox'},
                 {name: 'EUPHRAXIA 2012 Events App', description: 'Event coordinating app in android'},
                 {name: 'NOTEPAD EASY', description: 'Note taking App'}])
+
+Hobby.create([{name: 'Guitar', description: 'A rookie guitar player'},
+                {name: 'Cricket', description: 'An Avid cricket watcher and player'}])
+
+zoho = WorkExperience.create([{company_name: 'Zoho Corporation', timeline: 'Aug. 2013 - Dec-2017'}]);
+
+mdm = CompanyProject.create([{name: 'Mobile Device Manager Plus',
+                              description: 'MEMBER TECHNICAL STAFF, FULL STACK APPLICATION DEVELOPER, MODULE OWNER - QA, TOOLS DEVELOPER',
+                              work_experience_id: zoho.first.id}])
+
+Role.create([{
+    name: 'Tools Developer',
+    description: 'process and analyse customer data,
+    automate release process',
+    company_project_id: mdm.first.id
+                      }])
+Role.create([{
+    name: 'QA Module Owner',
+    description: 'Actively managed members of QATeam,
+    Coordinated with support to identify core usability issues of the customer',
+    company_project_id: mdm.first.id
+                      }])
+Role.create([{
+    name: 'New Hire Orientation',
+    description: 'Was responsible for Context sharing to the new members of the team',
+    company_project_id: mdm.first.id
+                      }])
+Role.create([{
+    name: 'Support Data Analysis',
+    description: 'Was responsible for analysis of support and live customer data',
+    company_project_id: mdm.first.id
+                      }])
+
+thoughtworks = WorkExperience.create([{company_name: 'Thoughtworks', timeline: 'Jan 2018 - Present'}]);
+
+recruitx = CompanyProject.create([{name: 'Recruitx',
+                              description: 'An app to help panelist sign up for recruitments',
+                              work_experience_id: thoughtworks.first.id}])
+
+sherpa = CompanyProject.create([{name: 'Sherpa',
+                                   description: 'decision making tool for staffing people in projects',
+                                   work_experience_id: thoughtworks.first.id}])
+Role.create([{
+                 name: 'App Developer',
+                 description: 'react native application in android and iOS',
+                 company_project_id: recruitx.first.id
+             }])
+
+Role.create([{
+                 name: 'App Developer',
+                 description: 'React and Ruby on rails',
+                 company_project_id: sherpa.first.id
+             }])
